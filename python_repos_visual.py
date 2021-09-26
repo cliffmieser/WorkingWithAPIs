@@ -4,13 +4,13 @@ from plotly.graph_objs import Bar
 from plotly import offline
 
 
-#make API call and store the response
+# make API call and store the response
 url = 'https://api.github.com/search/repositories?q=language:python&sort=stars'
 headers  = {'Accept': 'application/vnd.github.v3+json'}
 r = requests.get(url, headers=headers)
 print(f"Status code: {r.status_code}")
 
-#Process the results
+# Process the results
 response_dict = r.json()
 repo_dicts = response_dict['items']
 repo_links, stars, labels = [], [], []
